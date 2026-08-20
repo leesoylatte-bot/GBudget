@@ -262,6 +262,26 @@ tr.search-hide{display:none!important}
   .bottom-donut .donutcontent{grid-template-columns:1fr}
 }
 
+
+.donutpct{
+  position:absolute;
+  z-index:4;
+  color:#111;
+  font-size:11px;
+  font-weight:950;
+  line-height:1;
+  text-shadow:0 1px 2px rgba(255,255,255,.75);
+  pointer-events:none;
+  white-space:nowrap;
+}
+.pct-economy{left:18px;bottom:48px}
+.pct-labor{right:3px;top:36px}
+.pct-social{right:28px;top:8px}
+.bottom-donut .donutpct{font-size:12px}
+@media(max-width:620px){
+  .donutpct{font-size:11px}
+}
+
 </style></head><body><header><h1>경기도의회 경제노동위원회 · 2026년 제2회 추가경정예산안</h1><p>경제실 · 노동국 · 사회혁신경제국 세부사업 변동 전체 정리</p></header><main><input type="radio" name="tab" id="t0" checked><input type="radio" name="tab" id="t1"><input type="radio" name="tab" id="t2"><input type="radio" name="tab" id="t3">
 <div class="searchbar">
   <input id="businessSearch" type="search" placeholder="사업명 또는 부서명 검색" autocomplete="off">
@@ -349,6 +369,9 @@ tr.search-hide{display:none!important}
     <div class="donuttitle">실·국별 예산 비율 <span>(추경안 기준)</span></div>
     <div class="donutcontent">
       <div class="donut" aria-label="경제실 83.23%, 노동국 6.15%, 사회혁신경제국 10.62%">
+        <span class="donutpct pct-economy">83.23%</span>
+        <span class="donutpct pct-labor">6.15%</span>
+        <span class="donutpct pct-social">10.62%</span>
         <div class="donutcenter">
           <small>추경안 총계</small>
           <b>472,204,720</b>
