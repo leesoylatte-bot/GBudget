@@ -113,6 +113,155 @@ tr.search-hide{display:none!important}
  .budget3 b{font-size:19px}.barrow{grid-template-columns:105px 1fr 105px}.depthead b{font-size:15px}
 }
 
+
+.summarytop{
+  display:grid;
+  grid-template-columns:minmax(360px,.82fr) minmax(0,2.18fr);
+  gap:10px;
+  margin-bottom:10px;
+  align-items:stretch;
+}
+.summarycards .topcards{
+  margin-bottom:0;
+  height:100%;
+}
+.donutpanel{
+  background:#fff;
+  border:1px solid #d9e1eb;
+  border-radius:13px;
+  padding:16px;
+  min-height:100%;
+}
+.donuttitle{
+  font-size:17px;
+  font-weight:900;
+  color:#16345f;
+  margin-bottom:14px;
+}
+.donuttitle span{
+  font-size:11px;
+  color:#6d7a8d;
+  font-weight:700;
+}
+.donutcontent{
+  display:grid;
+  grid-template-columns:190px 1fr;
+  gap:15px;
+  align-items:center;
+}
+.donut{
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  position:relative;
+  background:conic-gradient(
+    #2f7bdc 0 83.23%,
+    #2f943f 83.23% 89.38%,
+    #6a3fb8 89.38% 100%
+  );
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.03);
+}
+.donut::after{
+  content:"";
+  position:absolute;
+  inset:43px;
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 0 0 1px #edf0f4;
+}
+.donutcenter{
+  position:absolute;
+  inset:43px;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.donutcenter small{
+  font-size:10px;
+  color:#67758a;
+  margin-bottom:4px;
+}
+.donutcenter b{
+  font-size:16px;
+  letter-spacing:-.4px;
+  color:#17345f;
+  font-variant-numeric:tabular-nums;
+}
+.donutcenter span{
+  font-size:9px;
+  color:#7c8899;
+  margin-top:3px;
+}
+.donutlegend{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.ditem{
+  display:grid;
+  grid-template-columns:14px 1fr;
+  gap:8px;
+  align-items:start;
+}
+.ditem>i{
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  margin-top:3px;
+}
+.ditem.blue>i{background:#2f7bdc}
+.ditem.green>i{background:#2f943f}
+.ditem.purple>i{background:#6a3fb8}
+.ditem strong{
+  display:block;
+  font-size:12px;
+  color:#27364d;
+  margin-bottom:2px;
+}
+.ditem b{
+  display:block;
+  font-size:11px;
+  color:#172238;
+  font-variant-numeric:tabular-nums;
+}
+.ditem span{
+  display:block;
+  font-size:10px;
+  color:#68768a;
+  margin-top:2px;
+}
+@media(max-width:1200px){
+  .summarytop{grid-template-columns:1fr}
+  .donutcontent{grid-template-columns:190px 1fr}
+}
+@media(max-width:620px){
+  .donutcontent{grid-template-columns:1fr}
+  .donut{margin:0 auto}
+  .donutlegend{display:grid;grid-template-columns:1fr}
+}
+
+
+/* 도넛 차트를 첫 화면 맨 하단에 배치 */
+.bottom-donut{margin-top:10px}
+.bottom-donut .donutpanel{width:100%;min-height:auto}
+.bottom-donut .donutcontent{
+  grid-template-columns:220px 1fr;
+  max-width:760px;
+  margin:0 auto;
+}
+.bottom-donut .donut{
+  width:205px;
+  height:205px;
+}
+.bottom-donut .donut::after,
+.bottom-donut .donutcenter{inset:46px}
+@media(max-width:620px){
+  .bottom-donut .donutcontent{grid-template-columns:1fr}
+}
+
 </style></head><body><header><h1>경기도의회 경제노동위원회 · 2026년 제2회 추가경정예산안</h1><p>경제실 · 노동국 · 사회혁신경제국 세부사업 변동 전체 정리</p></header><main><input type="radio" name="tab" id="t0" checked><input type="radio" name="tab" id="t1"><input type="radio" name="tab" id="t2"><input type="radio" name="tab" id="t3">
 <div class="searchbar">
   <input id="businessSearch" type="search" placeholder="사업명 또는 부서명 검색" autocomplete="off">
@@ -124,7 +273,8 @@ tr.search-hide{display:none!important}
 <section class="view" id="v0">
   <div class="unitline">단위 : 천원</div>
 
-  <div class="topcards">
+  
+<div class="topcards">
     <div class="topcard">
       <h2>경제실</h2>
       <div class="budget3">
@@ -159,10 +309,9 @@ tr.search-hide{display:none!important}
       </div>
       <div class="rateline">정책사업 <b>99.73%</b><i></i>행정운영경비 <b>0.27%</b><i></i>재무활동 <b>0.00%</b></div>
       <div class="countline">변동 <b>36건</b> · 신규 <b class="green">4</b> · 증액 <b class="purple">1</b> · 감액 <b class="red">31</b> · 전액감액 <b class="red">0</b></div>
-    </div>
   </div>
-
-  <div class="deptpanel">
+</div>
+<div class="deptpanel">
     <div class="depthead">
       <div><b>▥ &nbsp;부서별 예산 규모</b> <span>(추경안 기준)</span></div>
       <small>단위 : 천원</small>
@@ -196,7 +345,30 @@ tr.search-hide{display:none!important}
     </div>
   </div>
 
-  <div class="footnote">2026년도 제2회 추가경정예산안 · 경제노동위원회 소관 · 일반회계 세출 기준</div>
+  <div class="bottom-donut"><div class="donutpanel">
+    <div class="donuttitle">실·국별 예산 비율 <span>(추경안 기준)</span></div>
+    <div class="donutcontent">
+      <div class="donut" aria-label="경제실 83.23%, 노동국 6.15%, 사회혁신경제국 10.62%">
+        <div class="donutcenter">
+          <small>추경안 총계</small>
+          <b>472,204,720</b>
+          <span>천원 · 100%</span>
+        </div>
+      </div>
+      <div class="donutlegend">
+        <div class="ditem blue">
+          <i></i><div><strong>경제실</strong><b>393,013,935천원</b><span>83.23%</span></div>
+        </div>
+        <div class="ditem green">
+          <i></i><div><strong>노동국</strong><b>29,048,396천원</b><span>6.15%</span></div>
+        </div>
+        <div class="ditem purple">
+          <i></i><div><strong>사회혁신경제국</strong><b>50,142,389천원</b><span>10.62%</span></div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+<div class="footnote">2026년도 제2회 추가경정예산안 · 경제노동위원회 소관 · 일반회계 세출 기준</div>
 </section>
 <section class="view" id="v1"><div class="cards"><div class="card"><small>경제실 기정액</small><b>4,308.5억</b></div><div class="card"><small>제2회 추경안</small><b>3,930.1억</b></div><div class="card"><small>총 증감</small><b class="downtext">-378.4억</b></div><div class="card"><small>변동 세부사업</small><b>41건</b></div></div><div class="quick"><span>신규 <b>2</b></span><span>증액 <b>0</b></span><span>감액 <b>37</b></span><span>전액감액 <b>2</b></span></div><div class="legend">
 <span class="lg-green">신규</span>
